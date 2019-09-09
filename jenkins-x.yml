@@ -36,7 +36,7 @@ pipelineConfig:
               - name: install-external-dns
                 dir: /workspace/source/systems/external-dns
                 command: jx
-                args: ['step','helm','apply', '--boot', '--remote', '--no-vault', '--name', 'jx']
+                args: ['step','helm','apply', '--boot', '--remote', '--no-vault', '--name', 'exdns']
               - name: install-cert-manager-crds
                 dir: /workspace/source
                 command: kubectl
@@ -47,14 +47,14 @@ pipelineConfig:
               - name: install-cert-manager
                 dir: /workspace/source/systems/cm
                 command: jx
-                args: ['step','helm','apply', '--boot', '--remote', '--no-vault', '--name', 'jx']
+                args: ['step','helm','apply', '--boot', '--remote', '--no-vault', '--name', 'cm']
                 env:
                   - name: DEPLOY_NAMESPACE
                     value: cert-manager
               - name: install-acme-issuer-and-certificate
                 dir: /workspace/source/systems/acme
                 command: jx
-                args: ['step','helm','apply', '--boot', '--remote', '--no-vault', '--name', 'jx']
+                args: ['step','helm','apply', '--boot', '--remote', '--no-vault', '--name', 'acme']
               - name: install-vault
                 dir: /workspace/source/systems/vault
                 command: jx
