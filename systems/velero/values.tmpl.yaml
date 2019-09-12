@@ -1,6 +1,10 @@
 velero:
-{{- if .Requirements.velero.namespace }}
+{{- if hasKey .Requirements "velero" }}
+  {{- if .Requirements.velero.namespace }}
   enabled: true
+  {{- else }}
+  enabled: false
+  {{- end }}
 {{- else }}
   enabled: false
 {{- end }}
