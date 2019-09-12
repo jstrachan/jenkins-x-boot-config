@@ -22,6 +22,13 @@ pipelineConfig:
               - name: install-jx-crds
                 command: jx
                 args: ['upgrade','crd']
+              - name: install-velero
+                dir: /workspace/source/systems/velero
+                command: jx
+                args: ['step','helm','apply', '--boot', '--remote', '--no-vault', '--name', 'velero']
+                env:
+                  - name: DEPLOY_NAMESPACE
+                    value: velero
               - name: install-nginx
                 dir: /workspace/source/systems/jxing
                 command: jx
