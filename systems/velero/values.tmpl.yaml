@@ -34,6 +34,6 @@ velero:
       name: azure
       bucket: {{ .Requirements.storage.backup.url | removeScheme | quote }}
       config:
-        storageAccount: {{ .Requirements.veloro.serviceAccount | quote }}
+        storageAccount: {{ .Requirements.velero.serviceAccount | quote }}
 {{- end }}
 
