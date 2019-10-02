@@ -1,1 +1,3 @@
 # Override configuration from https://github.com/jenkins-x/jenkins-x-platform/blob/master/jenkins-x-platform/values.yaml
+jenkins-x-platform:
+  dockerRegistry: "{{ .Requirements.cluster.registry }}"

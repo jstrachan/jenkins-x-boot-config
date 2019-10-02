@@ -22,3 +22,7 @@ jenkins:
       InitialDelaySeconds: 10
     Liveness:
       InitialDelaySeconds: 10
+
+jenkins-x-platform:
+  dockerRegistry: "{{ .Requirements.cluster.registry }}"
+

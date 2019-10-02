@@ -2,9 +2,9 @@
 
 jenkins-x-platform:
 {{- if eq .Requirements.webhook "jenkins" }}
-  dockerRegistry: ""
+  dockerRegistry: "{{ .Requirements.cluster.registry }}"
 {{- else }}
-  dockerRegistry: gcr.io
+  dockerRegistry: {{ .Requirements.cluster.registry | default "gcr.io" }}
 {{- end }}
 
   PipelineSecrets:

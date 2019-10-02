@@ -3,3 +3,6 @@ exposecontroller:
   exposecontroller:
     HTTP: "true"
     TLSACME: "false"
+
+jenkins-x-platform:
+  dockerRegistry: "{{ .Requirements.cluster.registry }}"

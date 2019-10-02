@@ -60,4 +60,7 @@ jenkins:
       value: "false"
   Global:
     EnvVars: 
-      DOCKER_REGISTRY: "docker-registry.default.svc:5000"
+      DOCKER_REGISTRY: {{ .Requirements.cluster.registry | default "docker-registry.default.svc:5000" }}
+
+jenkins-x-platform:
+  dockerRegistry: {{ .Requirements.cluster.registry | default "docker-registry.default.svc:5000" }}

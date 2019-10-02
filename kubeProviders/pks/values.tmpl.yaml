@@ -11,3 +11,6 @@ jenkins:
     # for PKS there is a different docker host path
     DockerHostPath: "/var/vcap/sys/run/docker/docker.sock"
     DockerMountPath: "/var/run/docker.sock"
+
+jenkins-x-platform:
+  dockerRegistry: "{{ .Requirements.cluster.registry }}"

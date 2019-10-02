@@ -5,6 +5,8 @@ chartmuseum:
 jenkins:
   Persistence:
     Size: 20Gi
+jenkins-x-platform:
+  dockerRegistry: "{{ .Requirements.cluster.registry }}"
 monocular:
   mongodb:
     persistence:
