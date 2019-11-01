@@ -17,6 +17,7 @@ ingress:
     enabled: false
     production: false
 kaniko: true
+repository: bucketrepo
 secretStorage: local
 storage:
   logs:
@@ -27,7 +28,7 @@ storage:
     url: ""
   repository:
     enabled: false
-    url: ""
+    url: ""    
 versionStream:
   ref: "master"
   url: https://github.com/jenkins-x/jenkins-x-versions.git
